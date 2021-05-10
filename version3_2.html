@@ -1,0 +1,27 @@
+<html>
+<title>feedback form</title>
+<head></head>
+<body>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+$.ajax({
+    url: 'https://api.hsforms.com/submissions/v3/integration/submit/20024780/537f9076-47f9-4e84-a625-b7b6d0a8a11c',
+    dataType: 'json',
+    type: 'post',
+    contentType: 'application/json',
+    data: JSON.stringify( { "fields": [{"name": "email","value": "admin@gmail.com"}] }),
+    success: function( data, textStatus, jQxhr ){
+        $('#response pre').html( JSON.stringify( data ) );
+    },
+    error: function( jqXhr, textStatus, errorThrown ){
+        console.log( errorThrown );
+    }
+});
+
+</script>
+
+</body>
+</html>
